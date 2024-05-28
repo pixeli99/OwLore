@@ -18,8 +18,8 @@ The rapid advancements in Large Language Models (LLMs) have revolutionized vario
 
 Our repository is built on top of [LMFlow](https://github.com/OptimalScale/LMFlow). You can configure the environment using the following command lines:
 ```bash
-conda create -n py39 python=3.9 -y
-conda activate py39
+conda create -n owlore python=3.9 -y
+conda activate owlore
 conda install mpi4py
 bash install.sh
 pip install peft
@@ -39,13 +39,34 @@ We provide a quick overview of the arguments:
 - `--lisa_prob_mode`: Defines the method used to determine the sampling probability, which can include options such as `uniform`, `owl`, `decrease`, `increase`, etc.
 - `--galore`: Indicates whether to use GaLore as the optimizer.
 
-The script will run LISA on the GSM8k dataset.
+#### Commonsense Reasoning
+The script will run LISA on the `Commonsense Reasoning` dataset.
 ```bash
-bash owlore_scripts/run_lisa.sh # LISA
+bash owlore_scripts/run_lisa.sh merge # LISA
 ```
-The script will run OwLore on the GSM8k dataset.
+The script will run OwLore on the `Commonsense Reasoning` dataset.
 ```bash
-bash owlore_scripts/run_owlore_low_rank.sh # OwLore
+bash owlore_scripts/run_owlore_low_rank.sh merge # OwLore
+```
+
+#### MMLU
+The script will run LISA on the `MMLU` dataset.
+```bash
+bash owlore_scripts/run_lisa.sh mmlu # LISA
+```
+The script will run OwLore on the `MMLU` dataset.
+```bash
+bash owlore_scripts/run_owlore_low_rank.sh mmlu # OwLore
+```
+
+#### GSM8K
+The script will run LISA on the `GSM8k` dataset.
+```bash
+bash owlore_scripts/run_lisa.sh gsm # LISA
+```
+The script will run OwLore on the `GSM8k` dataset.
+```bash
+bash owlore_scripts/run_owlore_low_rank.sh gsm # OwLore
 ```
 
 ### Evaluation
@@ -77,8 +98,18 @@ accelerate launch -m lm_eval \
     --model hf \
     --model_args pretrained=/path/to/model\
     --tasks boolq,piqa,social_iqa,hellaswag,winogrande,arc_easy,arc_challenge,openbookqa \
-    --output_path mmlu_results \
+    --output_path qa_results \
     --num_fewshot 5 \
+    --batch_size auto \
+    --cache_requests true
+```
+#### GSM8K
+```bash
+accelerate launch -m lm_eval \
+    --model hf \
+    --model_args pretrained=/path/to/model\
+    --tasks gsm8k \
+    --output_path math_results \
     --batch_size auto \
     --cache_requests true
 ```
@@ -89,4 +120,5 @@ This repository is build upon the [LMFlow](https://github.com/OptimalScale/LMFlo
 ## Citation
 If you find our work helpful for your research, please consider citing the following BibTeX entry.
 ```
+
 ```

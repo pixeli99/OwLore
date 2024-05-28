@@ -2,7 +2,7 @@ export CUDA_VISIBLE_DEVICES=0
 
 lisa_activated_layers=2
 MODE=uniform
-data_dir=gsm
+data_dir=$1
 seed=111
 interval=3
 learning_rate=3e-4

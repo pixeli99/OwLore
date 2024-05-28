@@ -1,7 +1,7 @@
-export CUDA_VISIBLE_DEVICES=1
+export CUDA_VISIBLE_DEVICES=0
 
 lisa_activated_layers=5
-data_dir=gsm
+data_dir=$1
 seed=111
 model_type=llama2
 learning_rate=3e-4
