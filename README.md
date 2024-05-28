@@ -85,7 +85,7 @@ After setting up the environment, use the following command to run the evaluatio
 ```bash
 accelerate launch -m lm_eval \
     --model hf \
-    --model_args pretrained=/path/to/model\
+    --model_args pretrained=meta-llama/Meta-Llama-3-8B\
     --tasks mmlu \
     --output_path mmlu_results \
     --num_fewshot 5 \
@@ -96,7 +96,7 @@ accelerate launch -m lm_eval \
 ```bash
 accelerate launch -m lm_eval \
     --model hf \
-    --model_args pretrained=/path/to/model\
+    --model_args pretrained=meta-llama/Meta-Llama-3-8B\
     --tasks boolq,piqa,social_iqa,hellaswag,winogrande,arc_easy,arc_challenge,openbookqa \
     --output_path qa_results \
     --num_fewshot 5 \
@@ -107,7 +107,7 @@ accelerate launch -m lm_eval \
 ```bash
 accelerate launch -m lm_eval \
     --model hf \
-    --model_args pretrained=/path/to/model\
+    --model_args pretrained=meta-llama/Meta-Llama-3-8B\
     --tasks gsm8k \
     --output_path math_results \
     --batch_size auto \
