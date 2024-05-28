@@ -25,6 +25,10 @@ bash install.sh
 pip install peft
 ```
 
+### Prepare Dataset
+
+You can download our processed datasets from Hugging Face [here](https://huggingface.co/datasets/pengxiang/OwLore_Dataset).
+
 ### Finetuning Examples
 
 --- 
