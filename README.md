@@ -1,6 +1,6 @@
 # OwLore
 
-This repo contains the pre-release version of OwLore algorithm, proposed by [OwLore: Outlier-weighed Layerwise Sampled Low-Rank Projection for Memory-Efficient LLM Fine-tuning](https://github.com/pixeli99/OwLore).
+This repo contains the pre-release version of OwLore algorithm, proposed by [OwLore: Outlier-weighed Layerwise Sampled Low-Rank Projection for Memory-Efficient LLM Fine-tuning](https://arxiv.org/abs/2405.18380).
 
 Outlier-weighed Layerwise Sampled Low-Rank Projection (OwLore) is a novel memory-efficient LLM fine-tuning approach, enhances fine-tuning performance by using layerwise sampling and gradient low-rank training.
 
@@ -120,5 +120,12 @@ This repository is build upon the [LMFlow](https://github.com/OptimalScale/LMFlo
 ## Citation
 If you find our work helpful for your research, please consider citing the following BibTeX entry.
 ```
-
+@misc{li2024owlore,
+      title={OwLore: Outlier-weighed Layerwise Sampled Low-Rank Projection for Memory-Efficient LLM Fine-tuning}, 
+      author={Pengxiang Li and Lu Yin and Xiaowei Gao and Shiwei Liu},
+      year={2024},
+      eprint={2405.18380},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
 ```
